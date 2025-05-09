@@ -1,13 +1,10 @@
-main {
-  margin-top: 5rem;
-}
 .btn {
   padding: 1.8rem 4.693rem;
   color: $color-cream;
   border-radius: 2.8rem;
   font-size: 1.6rem;
   line-height: 1.75;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 400px) {
     padding: 0.9rem 2.8rem 0.9rem 2.7rem;
     font-size: 1.4rem;
   }
@@ -24,5 +21,20 @@ main {
   background-color: $color-coral;
   &:hover {
     background-color: $color-orange;
+  }
+}
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: $color-black;
+  cursor: pointer;
+  transition: 0.2s;
+  &:hover {
+    background-color: $color-purple-light;
   }
 }

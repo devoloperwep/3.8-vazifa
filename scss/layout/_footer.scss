@@ -1,0 +1,18 @@
+.footer {
+  padding-top: 3.4rem;
+  margin-bottom: 6.6rem;
+  @include respond(sm) {
+    padding-top: 1.6rem;
+    margin-bottom: 3.2rem;
+  }
+  &__container {
+    @include flex($align: center, $justify: space-between);
+    max-width: 1210px;
+  }
+  .site__logo-img {
+    @media screen and (max-width: 375px) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}

@@ -1,14 +1,253 @@
+/* hero */
 .hero {
+  margin-bottom: 13.6rem;
+  @include respond(lg) {
+    margin-bottom: 12rem;
+  }
+  @include respond(sm) {
+    margin-bottom: 10rem;
+  }
+  &__content {
+    width: 100%;
+    max-width: 770px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    .hero__title {
+      font-size: $font-size-l;
+      color: $color-black;
+      margin-bottom: 2.3rem;
+      @include respond(lg) {
+        font-size: 4.4rem;
+        margin-bottom: 2.7rem;
+      }
+      @include respond(sm) {
+        font-size: $font-size-s;
+        margin-bottom: 1.6rem;
+      }
+    }
+  }
+
+  &__description {
+    color: $color-olive;
+    margin-bottom: 8rem;
+    @include respond(lg) {
+      margin-bottom: 6.4rem;
+    }
+    @include respond(sm) {
+      font-size: 1.4rem;
+      margin-bottom: 3.2rem;
+    }
+  }
+  &__list {
+    display: grid;
+    gap: 2.4rem;
+    grid-template-areas:
+      "a a b c d d"
+      "a a e e f f";
+    @include respond(lg) {
+      grid-template-areas:
+        "a a b c"
+        "a a e e"
+        "d d f f";
+    }
+    @include respond(sm) {
+      grid-template-areas:
+        "a a "
+        "a a"
+        "b c"
+        "e e"
+        "d d"
+        "f f";
+    }
+  }
+  &__item {
+    background-repeat: no-repeat;
+    background-position: right 2.4rem top 2.4rem;
+    padding: 2.4rem;
+    border-radius: 0.8rem;
+    height: 182px;
+    @include flex($align: flex-end);
+  }
+  .graphic {
+    grid-area: a;
+    height: 387px;
+    background-color: $color-purple-light;
+    background-image: url("../images/pattern-graphic-design.svg");
+  }
+  .ux {
+    grid-area: b;
+    background-color: $color-orange;
+    background-image: url("../images/pattern-ui-ux.svg");
+  }
+  .apps {
+    grid-area: c;
+    background-color: $color-orange;
+    background-image: url("../images/pattern-apps.svg");
+  }
+  .photography {
+    grid-area: d;
+    background-color: $color-teal;
+    background-image: url("../images/pattern-photography.svg");
+  }
+  .Illustrations {
+    grid-area: e;
+    background-color: $color-coral;
+    background-image: url("../images/pattern-illustrations.svg");
+  }
+  .motion {
+    grid-area: f;
+    background-color: $color-purple-dark;
+    background-image: url("../images/pattern-motion-graphics.svg");
+  }
+  &__title {
+    color: #fff;
+    font-size: 2.4rem;
+  }
 }
-.hero__container {
+/* workflow */
+.workflow {
+  &__container {
+    margin-bottom: 8.8rem;
+    @include flex($align: center, $justify: space-between, $gap: 5rem);
+    @include respond(lg) {
+      margin-bottom: 12rem;
+    }
+    @include respond(md) {
+      @include flex($align: center, $justify: center, $direction: column);
+      text-align: center;
+      margin-bottom: 10rem;
+    }
+  }
+  &__img {
+    @include respond(lg) {
+      max-width: 350px;
+      max-height: 350px;
+    }
+    @include respond(md) {
+      margin-bottom: $font-size-m;
+    }
+    @include respond(sm) {
+      max-width: 300px;
+      max-height: 300px;
+    }
+  }
+  &__content {
+    width: 100%;
+    max-width: 540px;
+  }
+  &__title {
+    font-size: $font-size-m;
+    line-height: 1;
+    margin-bottom: 3.2rem;
+    color: $color-black;
+    @include respond(lg) {
+      font-size: $font-size-s;
+      margin-bottom: 2.4rem;
+    }
+    @include respond(sm) {
+      font-size: 2.6rem;
+    }
+  }
+  &__description {
+    color: $color-olive;
+    margin-bottom: $font-size-m;
+    @include respond(lg) {
+      margin-bottom: 4.2rem;
+    }
+    @include respond(sm) {
+      margin-bottom: 2.4rem;
+      font-size: 1.6rem;
+    }
+  }
 }
-.container {
+/* work */
+.work {
+  margin-bottom: 8.8rem;
+  width: 100%;
+  max-width: 1520px;
+  padding: 0;
+  @include respond(lg) {
+    margin-bottom: 12rem;
+  }
+  @include respond(sm) {
+    margin-bottom: 10rem;
+  }
+  &__title {
+    text-align: center;
+    font-size: $font-size-s;
+    color: $color-black;
+    margin-bottom: $font-size-l;
+    @include respond(sm) {
+      margin-bottom: $font-size-s;
+    }
+  }
+  &__images {
+    @include flex($align: center, $gap: 3rem);
+    overflow-x: scroll;
+    margin-bottom: $font-size-l;
+    @include respond(sm) {
+      margin-bottom: $font-size-s;
+      @include flex($align: center, $gap: 1.5rem);
+    }
+  }
+  &__images::-webkit-scrollbar {
+    opacity: 0;
+    height: 0;
+  }
+  &__img {
+    border-radius: 1rem;
+    @include respond(sm) {
+      height: 180px;
+    }
+  }
+  &__icons {
+    @include flex($align: center, $justify: center, $gap: 1.6rem);
+  }
 }
-.hero__title {
-}
-.hero__description {
-}
-.hero__list {
-}
-.hero__item {
+/* contact */
+.contact {
+  margin-bottom: 5.6rem;
+  @include respond(sm) {
+    margin-bottom: 4rem;
+  }
+  &__container {
+    padding: 8rem 6.5rem;
+    background-color: $color-black;
+    color: $color-cream;
+    border-radius: 1rem;
+    max-width: 1100px;
+    @include flex($align: center, $justify: space-between);
+    @include respond(lg) {
+      @include flex($align: center, $justify: center, $direction: column);
+      padding: 5.6rem 7.5rem 6.4rem 7.5rem;
+      text-align: center;
+    }
+    @include respond(sm) {
+      padding: 4.9rem 2.4rem 4.8rem 2.4rem;
+    }
+  }
+  &__content {
+    width: 100%;
+    max-width: 540px;
+  }
+  &__title {
+    font-size: $font-size-m;
+    line-height: 1;
+    margin-bottom: 2.5rem;
+    @include respond(lg) {
+      font-size: $font-size-s;
+    }
+    @include respond(sm) {
+      font-size: 2.6rem;
+    }
+  }
+  &__description {
+    @include respond(lg) {
+      margin-bottom: 2.6rem;
+    }
+    @include respond(sm) {
+      font-size: 1.6rem;
+    }
+  }
 }
